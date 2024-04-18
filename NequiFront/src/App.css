@@ -99,3 +99,123 @@ header {
 .button-recarga:hover {
   background-color: #0056b3;
 }
+
+.container-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.buttons-right {
+  display: inline-block;
+  margin-right: auto; 
+}
+
+.button-recarga {
+  background-color: #da0081;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;  
+}
+
+.button-recarga:hover {
+  background-color: #e366a9;
+  color: white;
+}
+
+.login-section {
+  padding-top: 70px;
+  color: #fff;
+  height: 800px;
+}
+
+.login-section .login-wrap {
+  max-width: 370px;
+  width: 90%;
+  margin: 64px auto 0;
+  text-align: center;
+  color: #200020;
+  background-color: #fff;
+  padding: 32px 16px 24px;
+  border-radius: 4px;
+}
+
+.content-key-view .txt-description p, .login-section .login-wrap, .login-section .login-wrap .forgot-password, .login-section .login-wrap h1, .login-section .login-wrap p {
+  font-family: Manrope, sans-serif;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-wrap {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.input-country {
+  width: 100;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  gap: 8px;
+}
+
+.input-country .wrap-select-country {
+  display: inline-block;
+  height: 50px;
+  vertical-align: middle;
+  width: 45%;
+}
+
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-form .form-group {
+  margin-bottom: 20px;
+}
+
+.login-form input[type="tel"],
+.login-form input[type="password"] {
+  width: 100%;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff; 
+}
+
+.login-form input[type="tel"]:focus,
+.login-form input[type="password"]:focus {
+  color: black;
+  outline: none; 
+  border-color: #007bff; 
+}
+
+button[type="submit"] {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin: 0 auto;
+  padding-right: 30px;
+  padding-left: 30px;
+  float: none;
+  border-radius: 4px;
+  background-color: #DA0081;
+  font-family: Manrope, sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 20px;
+  border: none;
+}
+
+button[type="submit"]:hover {
+  background-color: #F1bfda;
+}
+
