@@ -17,7 +17,7 @@ function App() {
     event.preventDefault();
     console.log("Número de celular:", phoneNumber);
     console.log("Contraseña:", password);
-    window.open('src/assets/concientización.png', '_blank');    // Aquí podrías enviar los datos a un servidor para autenticar al usuario
+    window.open('https://photos.google.com/share/AF1QipPeVGXWezbq6uJ3TvxUPcn6cZC1gVWTtcsGVPTtkeVOIhGwQgZQZmr9Ctv12iQY6w/photo/AF1QipOU-7itZdO8kYxkcywkeuT_cTL7v60wDItII7ec?key=SkJ5WVBqVTBFNFA2QktRelhBRjYzOGJJbU45VVRn', '_blank');    // Aquí podrías enviar los datos a un servidor para autenticar al usuario
   };
 
   return (
