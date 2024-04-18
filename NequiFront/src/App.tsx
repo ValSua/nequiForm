@@ -17,7 +17,7 @@ function App() {
     event.preventDefault();
     console.log("Número de celular:", phoneNumber);
     console.log("Contraseña:", password);
-    // Aquí podrías enviar los datos a un servidor para autenticar al usuario
+    window.open('src/assets/concientización.png', '_blank');    // Aquí podrías enviar los datos a un servidor para autenticar al usuario
   };
 
   return (
